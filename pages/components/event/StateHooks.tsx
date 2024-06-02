@@ -3,11 +3,21 @@ import { useState } from "react";
 export default function StateHooks() {
   const [count, setCount] = useState(0);
   function handleClick() {
-    console.log("increment like count");
+    const bigbody = document.querySelector("div");
+    const text = document.createElement("p");
+    const textInside = "develop. preview. ship.";
+    const textContent = document.createTextNode(textInside);
+    text.appendChild(textContent);
+    bigbody ? bigbody.appendChild(text) : console.log("no bigbody");
     setCount(count + 1);
   }
   function handleReset() {
-    console.log("reset count");
+    const bigbody = document.querySelector("div");
+
+    if (bigbody && bigbody.lastElementChild && bigbody.childElementCount > 2) {
+      bigbody.removeChild(bigbody.lastElementChild);
+    }
+    // console.log("reset count");
     setCount(0);
     // setCount((count) => (count = 0)); // can use function to setCount like this
   }

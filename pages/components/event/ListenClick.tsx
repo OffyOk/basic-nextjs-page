@@ -1,6 +1,6 @@
 export default function ListenClick() {
   function handleClick() {
-    console.log("increment like count");
+    // console.log("increment like count");
   }
   return (
     <button
